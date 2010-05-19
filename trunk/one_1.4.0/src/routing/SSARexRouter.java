@@ -27,7 +27,7 @@ import core.Tuple;
 
 /*
  * add by xiaochengxin
- * 
+ * OK
  */
 public class SSARexRouter extends ActiveRouter {
 	/** delivery predictability initialization constant*/
