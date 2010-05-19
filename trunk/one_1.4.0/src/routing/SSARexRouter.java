@@ -24,6 +24,11 @@ import core.Tuple;
  * <I>Probabilistic routing in intermittently connected networks</I> by
  * Anders Lindgren et al.
  */
+
+/*
+ * add by xiaochengxin
+ * 
+ */
 public class SSARexRouter extends ActiveRouter {
 	/** delivery predictability initialization constant*/
 	public static final double P_INIT = 0.75;
