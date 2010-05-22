@@ -35,6 +35,8 @@ public class Message implements Comparable<Message> {
 	/** Initial TTL of the message */
 	private int initTtl;
 	
+	public static final double INITPRIORITY = 0.9;
+	private Double priority;
 	/** if a response to this message is required, this is the size of the 
 	 * response message (or 0 if no response is requested) */
 	private int responseSize;
@@ -52,6 +54,14 @@ public class Message implements Comparable<Message> {
 	static {
 		reset();
 		DTNSim.registerForReset(Message.class.getCanonicalName());
+	}
+	
+	public double getPri(){
+		return priority;
+	}
+	
+	public void setPri(double pri){
+		priority = pri;
 	}
 	
 	/**
@@ -77,6 +87,7 @@ public class Message implements Comparable<Message> {
 		this.requestMsg = null;
 		this.properties = null;
 		this.appID = null;
+		this.priority = INITPRIORITY;
 		
 		Message.nextUniqueId++;
 		addNodeOnPath(from);
@@ -338,7 +349,6 @@ public class Message implements Comparable<Message> {
 	public int compareTo(Message m) {
 		return toString().compareTo(m.toString());
 	}
-	
 	/**
 	 * Resets all static fields to default values
 	 */
